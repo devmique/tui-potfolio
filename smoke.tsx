@@ -9,9 +9,13 @@ const must = (html: string, needle: string, what: string) => {
   if (!html.includes(needle)) throw new Error(`${what}: missing ${JSON.stringify(needle)}`)
 }
 
-// first paint is the empty PowerShell screen (typewriter starts at 0 chars)
+// first paint is the empty PowerShell screen (typewriter starts at 0 chars) — the
+// interactive UI must not render yet, but SEO/crawler content must, since a bot
+// never types "devmique" to get past the boot gate.
 const boot = renderToString(<App />)
 if (boot.includes('Welcome back')) throw new Error('app: portfolio must not render before boot')
+must(boot, 'Johnlord Mique', 'seo: name present before boot')
+must(boot, 'TranSync PH', 'seo: projects present before boot')
 
 must(renderToString(<About />), 'Johnlord Mique', 'about')
 must(renderToString(<Experience />), 'Endsofttech Web Solutions', 'experience')

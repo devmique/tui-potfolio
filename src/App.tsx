@@ -1,8 +1,41 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import portrait from './portrait.txt?raw'
-import { BOOT_TEXT, ME, RESUME_FILE, WORDMARK } from './data'
+import { BOOT_TEXT, EXPERIENCE, ME, PROJECTS, RESUME_FILE, SKILLS, WORDMARK } from './data'
 import { Loading, Panel } from './ui'
 import { About, Certifications, Contact, Experience, Projects, Skills, Tips } from './sections'
+
+/** real content, visually hidden — search engines and screen readers see this on first
+    paint, before the terminal boot gate ever renders anything visible. same source of
+    truth as every visible section (data.ts), so it can't drift out of sync. */
+function SeoContent() {
+  return (
+    <div className="sr-only">
+      <h1>{ME.name} (devmique) — {ME.role}</h1>
+      <p>{ME.tagline} Based in {ME.location}.</p>
+      <h2>Experience</h2>
+      <ul>
+        {EXPERIENCE.map((e) => (
+          <li key={e.company}>{e.role} at {e.company}, {e.period}</li>
+        ))}
+      </ul>
+      <h2>Skills</h2>
+      <p>{SKILLS.join(', ')}</p>
+      <h2>Projects</h2>
+      <ul>
+        {PROJECTS.map((p) => (
+          <li key={p.name}>{p.name} — {p.desc}</li>
+        ))}
+      </ul>
+      <h2>Contact</h2>
+      <ul>
+        {ME.links.map((l) => (
+          <li key={l.url}><a href={l.url}>{l.label}: {l.url}</a></li>
+        ))}
+        <li><a href={`mailto:${ME.email}`}>{ME.email}</a></li>
+      </ul>
+    </div>
+  )
+}
 
 /* ------------------------------------------------------------------ boot */
 
@@ -423,6 +456,7 @@ export default function App() {
 
   return (
     <div className="h-full">
+      <SeoContent />
       {phase === 'shell' ? (
         <PowerShell
           key={session}

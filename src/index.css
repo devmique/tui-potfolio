@@ -22,6 +22,21 @@ body {
   overflow-x: hidden;
 }
 
+/* visually hidden but present in the DOM: search engines and screen readers get the
+   real bio/skills/projects text even though the terminal boot gate hides it visually
+   until "devmique" is typed. same content, not cloaking. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* terminal scrollbar */
 *::-webkit-scrollbar { width: 8px; height: 8px; }
 *::-webkit-scrollbar-track { background: transparent; }
