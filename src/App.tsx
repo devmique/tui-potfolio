@@ -208,9 +208,12 @@ function Terminal({ onExit }: { onExit: () => void }) {
   }, [])
 
   useEffect(() => {
+    // nothing to scroll to yet — stay put so the session opens on the welcome
+    // panel (wordmark + version) instead of jumping straight to the tips box
+    if (!entries.length) return
     const el = scrollRef.current
     if (el) el.scrollTop = el.scrollHeight
-  }, [entries, hint])
+  }, [entries])
 
   const run = useCallback(
     (raw: string) => {
