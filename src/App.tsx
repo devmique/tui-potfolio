@@ -426,7 +426,7 @@ function Terminal({ onExit }: { onExit: () => void }) {
             />
             <button
               onClick={exit}
-              className="cursor-pointer self-center rounded border border-line px-2 py-0.5 text-xs text-dim active:border-accent active:text-accent sm:hidden"
+              className="relative z-10 cursor-pointer self-center rounded border border-line px-2 py-0.5 text-xs text-dim active:border-accent active:text-accent sm:hidden"
               aria-label="exit session"
             >
               &#10005; exit
