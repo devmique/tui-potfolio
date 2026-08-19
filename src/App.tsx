@@ -158,30 +158,32 @@ const TIPS = Object.entries(COMMANDS).map(([cmd, c]) => ({ cmd: '/' + cmd, help:
 
 function Welcome({ onPick }: { onPick: (cmd: string) => void }) {
   return (
-    <div className="flex flex-col gap-3 lg:flex-row lg:items-stretch">
-      <Panel title="devmique v2.0.0" className="min-w-0 flex-1">
-        <div className="w-full [container-type:inline-size]">
-          <pre className="wordmark overflow-hidden font-mono" aria-label="DEVMIQUE">{WORDMARK}</pre>
-        </div>
-        <div className="mt-4 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-          <div className="min-w-0 space-y-1.5">
-            <div className="text-sm">
-              {ME.name} <span className="text-dim">&middot;</span> {ME.role}{' '}
-              <span className="text-dim">&middot;</span> {ME.location}
-            </div>
-            <div className="text-dim">C:\Users\mique&gt;</div>
-            <div className="pt-1 text-xs text-dim">type a command below, or tap one from the tips.</div>
+    <Panel title={<><span className="text-accent">devmique</span> <span className="text-dim">v2.0.1</span></>}>
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-stretch">
+        <div className="min-w-0 flex-1">
+          <div className="w-full [container-type:inline-size]">
+            <pre className="wordmark overflow-hidden font-mono" aria-label="DEVMIQUE">{WORDMARK}</pre>
           </div>
-          <pre
-            aria-label="ASCII portrait of Johnlord Mique"
-            className="shrink-0 overflow-hidden font-mono text-[5.5px] leading-[1.05] text-fg/85 sm:text-[7px] md:text-[6.5px] lg:text-[7px]"
-          >{portrait}</pre>
+          <div className="mt-4 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div className="min-w-0 space-y-1.5">
+              <div className="text-sm">
+                {ME.name} <span className="text-dim">&middot;</span> {ME.role}{' '}
+                <span className="text-dim">&middot;</span> {ME.location}
+              </div>
+              <div className="text-dim">C:\Users\mique&gt;</div>
+              <div className="pt-1 text-xs text-dim">type a command below, or tap one from the tips.</div>
+            </div>
+            <pre
+              aria-label="ASCII portrait of Johnlord Mique"
+              className="shrink-0 overflow-hidden font-mono text-[5.5px] leading-[1.05] text-fg/85 sm:text-[7px] md:text-[6.5px] lg:text-[7px]"
+            >{portrait}</pre>
+          </div>
         </div>
-      </Panel>
-      <div className="lg:w-72 lg:shrink-0">
-        <Tips onPick={onPick} commands={TIPS} />
+        <div className="border-t border-accent pt-4 lg:w-72 lg:shrink-0 lg:border-t-0 lg:border-l lg:pl-4">
+          <Tips onPick={onPick} commands={TIPS} />
+        </div>
       </div>
-    </div>
+    </Panel>
   )
 }
 

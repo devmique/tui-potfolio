@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react'
-import { A, Panel, Rotator } from './ui'
+import { A, Rotator } from './ui'
 import { CERTIFICATE_ALBUMS, EXPERIENCE, ME, PROJECTS, SKILLS } from './data'
 
 const Key = ({ children }: { children: ReactNode }) => (
@@ -157,7 +157,10 @@ export function Tips({ onPick, commands }: {
   commands: { cmd: string; help: string }[]
 }) {
   return (
-    <Panel title="Tips for getting started" className="h-full">
+    <div>
+      <div className="mb-2 text-sm text-accent">
+        Tips for getting started
+      </div>
       <ul className="space-y-1 text-sm">
         {commands.map((c) => (
           <li key={c.cmd}>
@@ -171,6 +174,6 @@ export function Tips({ onPick, commands }: {
           </li>
         ))}
       </ul>
-    </Panel>
+    </div>
   )
 }

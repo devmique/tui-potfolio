@@ -2,16 +2,12 @@ import { useEffect, useState, type ReactNode } from 'react'
 
 export function Panel({
   title, children, className = '',
-}: { title?: string; children: ReactNode; className?: string }) {
+}: { title?: ReactNode; children: ReactNode; className?: string }) {
   return (
-    <div className={`rounded-lg border border-line bg-panel/60 ${className}`}>
-      {title && (
-        <div className="border-b border-line px-3 py-1.5 text-[11px] sm:text-xs text-accent">
-          {title}
-        </div>
-      )}
-      <div className="p-3 sm:p-4">{children}</div>
-    </div>
+    <fieldset className={`m-0 rounded-lg border-2 border-accent bg-panel/60 px-3 pb-3 sm:px-4 sm:pb-4 ${className}`}>
+      {title && <legend className="px-1.5 text-[11px] sm:text-xs">{title}</legend>}
+      <div>{children}</div>
+    </fieldset>
   )
 }
 
