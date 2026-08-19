@@ -438,7 +438,8 @@ function Terminal({ onExit }: { onExit: () => void }) {
                 <span className="text-accent">Press ctrl+c again to exit</span>
               ) : (
                 <span>
-                  &#9205;&#9205; auto mode on <span className="hidden sm:inline">&middot; &uarr;&darr; for history</span>
+                  <span className="text-yellow-500"><span className="text-[9px]">&#9654;&#9654;</span> auto mode on</span>{' '}
+                  <span className="hidden sm:inline">&middot; &uarr;&darr; for history</span>
                 </span>
               )}
             </span>
