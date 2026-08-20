@@ -116,6 +116,13 @@ export const CERTIFICATE_ALBUMS: CertificateAlbum[] = [
       { title: 'Back-End Development', issueDate: 'Apr 2025', image: '/certificates/cert11.jpg' },
     ],
   },
+  {
+    issuer: 'Anthropic',
+    color: '25 95% 53%',
+    certificates: [
+      { title: 'Building with the Claude API', issueDate: 'Aug 2026', image: '/certificates/cert17.jpg' },
+    ],
+  },
 ]
 
 export const RESUME_FILE = '/johnlord_mique_resume.pdf'
