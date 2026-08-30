@@ -23,7 +23,7 @@ export const EXPERIENCE = [
 
 export const SKILLS = [
   'HTML', 'CSS', 'JavaScript', 'Tailwind CSS', 'React', 'TypeScript', 'Next.js',
-  'Node.js', 'Express', 'MySQL', 'MongoDB', 'PostgreSQL', 'Git', 'Supabase', 'Docker',
+  'Node.js', 'Express', 'MySQL', 'MongoDB', 'PostgreSQL', 'Git', 'Supabase', 'Docker', 'Github Actions', 'Zod', 'Vercel', 'Render', 'Firebase', 'Neon', 'Redis', 'Prisma', 'TanStack Query',
 ]
 
 export type Project = {
