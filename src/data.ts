@@ -18,6 +18,14 @@ export const EXPERIENCE = [
     role: 'Full-Stack Developer Intern',
     company: 'Endsofttech Web Solutions',
     period: 'Jun 2026 — Sep 2026',
+    description: [
+      'Developed CRM features including promo ads tracking, an SMS credit balance monitor (iSMS API), SMTP2GO email-open tracking, a PDF quotation generator, and in-app email/SMS messaging — reducing reliance on external tools for client communication.',
+      'Implemented full SEO and Open Graph metadata (canonical URLs, environment-based robots rules, meta descriptions, og:image) across the Vet Assist marketing site, improving search visibility and social link previews.',
+      'Built a referral link feature on the intake form that syncs directly with the CRM\'s lead pipeline, streamlining lead capture for the sales team.',
+      'Debugged and resolved UI issues across Vet Assist, a B2B multi-tenant SaaS platform for veterinary clinics — fixing PDF layout breaks, styling inconsistencies, and misaligned elements.',
+      'Rebuilt the calendar UI with Shadcn-UI, applying reusable component patterns that cut code duplication across the codebase.',
+      'Authored sequential SQL migrations for the CRM to support safe, incremental schema changes.',
+    ],
   },
 ]
 

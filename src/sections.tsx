@@ -35,6 +35,13 @@ export function Experience() {
           <div className="text-accent">{e.role}</div>
           <div className="text-sm">{e.company}</div>
           <div className="text-xs text-dim">{e.period}</div>
+          {e.description && (
+            <ul className="mt-2 space-y-1 text-xs text-dim list-disc list-inside">
+              {e.description.map((d, i) => (
+                <li key={i}>{d}</li>
+              ))}
+            </ul>
+          )}
         </div>
       ))}
     </div>

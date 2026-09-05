@@ -15,7 +15,14 @@ function SeoContent() {
       <h2>Experience</h2>
       <ul>
         {EXPERIENCE.map((e) => (
-          <li key={e.company}>{e.role} at {e.company}, {e.period}</li>
+          <li key={e.company}>
+            {e.role} at {e.company}, {e.period}
+            {e.description && (
+              <ul className="ml-4 list-disc">
+                {e.description.map((d, i) => <li key={i}>{d}</li>)}
+              </ul>
+            )}
+          </li>
         ))}
       </ul>
       <h2>Skills</h2>
