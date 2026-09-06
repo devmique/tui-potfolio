@@ -129,6 +129,14 @@ export const CERTIFICATE_ALBUMS: CertificateAlbum[] = [
     color: '25 95% 53%',
     certificates: [
       { title: 'Building with the Claude API', issueDate: 'Aug 2026', image: '/certificates/cert17.jpg' },
+      { title: 'Introduction to Model Context Protocol', issueDate: 'Aug 2026', image: '/certificates/cert18.jpg' },
+    ],
+  },
+  {
+    issuer: 'Alison',
+    color: '0 90% 55%',
+    certificates: [
+      { title: 'Diploma in DevOps Engineering - Kubernetes, Docker and Google Cloud', issueDate: 'Sep 2026', image: 'https://alison.com/verify/632c42fdac' },
     ],
   },
 ]
